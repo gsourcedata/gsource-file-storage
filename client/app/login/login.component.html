@@ -1,0 +1,39 @@
+<app-toast [message]="toast.message"></app-toast>
+
+<div class="row">
+    <div class="offset-md-4 offset-lg-4 col-md-4 col-lg-4">
+      <div class="logo-div">
+        <img src="../../assets/img/logo-new.png" class="img img-fluid"> 
+      </div>
+      <hr>
+      <div class="headline">
+        <h4 class="text-center color-b" style="color:#F16366;">FSS (File Sharing System)</h4>
+        <br>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="input-group" [ngClass]="setClassEmail()">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </div>
+          <input class="form-control" type="email" name="email"
+                 formControlName="email" placeholder="Email" autofocus>
+        </div>
+        <div class="input-group" [ngClass]="setClassPassword()">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-key"></i>
+            </span>
+          </div>
+          <input class="form-control" type="password" name="password"
+                 formControlName="password" placeholder="Password">
+        </div>
+        <button class="btn btn-primary form-control" type="submit" [disabled]="!loginForm.valid">
+         Login
+        </button>
+      </form>
+    </div>
+  </div>
+
+
